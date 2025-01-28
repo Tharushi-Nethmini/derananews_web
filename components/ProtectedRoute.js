@@ -11,7 +11,7 @@ const ProtectedRoute = ({ children }) => {
   useEffect(() => {
     if (typeof window !== "undefined" && !isAuthenticated()) {
       // If user is not authenticated, redirect to login page
-      router.push('/login');
+      router.push('/auth/login');
     } else {
       setLoading(false);
     }
