@@ -15,7 +15,7 @@ export default function CreateArticle() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post('http://localhost:5000/api/articles', {
+      const res = await axios.post('https://derananews-api.vercel.app/api/articles', {
         title,
         content,
         author,

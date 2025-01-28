@@ -16,7 +16,7 @@ const Edit = () => {
     // Fetch the article data
     const fetchArticle = async () => {
       try {
-        const { data } = await axios.get(`http://localhost:5000/api/articles/${id}`);
+        const { data } = await axios.get(`https://derananews-api.vercel.app/api/articles/${id}`);
         setTitle(data.title);
         setAuthor(data.author);
         setContent(data.content);
@@ -31,7 +31,7 @@ const Edit = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.put(`http://localhost:5000/api/articles/${id}`, {
+      const res = await axios.put(`https://derananews-api.vercel.app/api/articles/${id}`, {
         title,
         content,
         author,

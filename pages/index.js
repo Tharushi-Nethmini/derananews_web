@@ -15,7 +15,7 @@ export default function Home() {
 
   useEffect(() => {
     const fetchArticles = async () => {
-      const { data } = await axios.get('http://localhost:5000/api/articles');
+      const { data } = await axios.get('https://derananews-api.vercel.app/api/articles');
       setArticles(data);
       setTotalArticles(data.length); // Set total articles count for pagination
     };
@@ -31,7 +31,7 @@ export default function Home() {
 
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`http://localhost:5000/api/articles/${id}`);
+      await axios.delete(`https://derananews-api.vercel.app/api/articles/${id}`);
       setArticles(articles.filter(article => article._id !== id)); // Remove deleted article from UI
     } catch (error) {
       console.error('Error deleting article:', error);
